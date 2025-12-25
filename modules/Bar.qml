@@ -1,8 +1,7 @@
-pragma ComponentBehavior: Bound
 import Quickshell
-import Quickshell.Io
+import QtQuick.Layouts
 import QtQuick
-import "../components"
+import qs.components
 
 Scope {
   Variants {
@@ -21,10 +20,43 @@ Scope {
       implicitHeight: 30
       color: "#1a1b26"
 
-      Clock {
+      RowLayout {
+        anchors.fill: parent
+        anchors.leftMargin: 12
+        anchors.rightMargin: 12
+        spacing: 0
+
+        // Left
+        RowLayout {
+          id: leftSection
+          Layout.alignment: Qt.AlignLeft
+
+          Workspaces {}
+        }
+
+        Item {
+          Layout.fillWidth: true
+        }
+
+        // Right
+        RowLayout {
+          id: rightSection
+          Layout.alignment: Qt.AlignRight
+
+          Item {
+            implicitWidth: 1
+          }
+        }
+      }
+
+      // Center
+      RowLayout {
+        id: centerSection
         anchors.centerIn: parent
-        color: "#a9b1d6"
-        font.pixelSize: 14
+        Clock {
+          color: "#a9b1d6"
+          font.pixelSize: 14
+        }
       }
     }
   }
