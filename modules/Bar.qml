@@ -43,9 +43,7 @@ Scope {
           id: rightSection
           Layout.alignment: Qt.AlignRight
 
-          Item {
-            implicitWidth: 1
-          }
+          Battery {}
         }
       }
 
