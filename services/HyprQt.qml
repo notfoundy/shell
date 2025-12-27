@@ -9,6 +9,14 @@ Singleton {
   readonly property int focusedId: Hyprland.focusedWorkspace?.id ?? -1
   readonly property var workspaces: Hyprland.workspaces.values
 
+  // Fetch decoration option
+  readonly property int rounding: {
+    if (Hyprland.options && Hyprland.options["decoration:rounding"]) {
+      return Hyprland.options["decoration:rounding"].int;
+    }
+    return 12;
+  }
+
   function isActive(id) {
     return focusedId == id;
   }
