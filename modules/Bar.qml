@@ -32,6 +32,7 @@ Scope {
           Layout.alignment: Qt.AlignLeft
 
           Workspaces {}
+          SystemGroup {}
         }
 
         Item {
