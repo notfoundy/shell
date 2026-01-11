@@ -1,6 +1,13 @@
 import Quickshell
-import qs.modules
+import QtQuick
+import qs.panels
 
-Scope {
-  Bar {}
+ShellRoot {
+  component PanelFamilyLoader: LazyLoader {
+    active: true
+  }
+
+  PanelFamilyLoader {
+    component: IterPanelFamily {}
+  }
 }
